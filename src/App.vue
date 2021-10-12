@@ -50,6 +50,7 @@ import { ChevronDownIcon } from '@heroicons/vue/solid'
       MenuButton,
       MenuItems,
       MenuItem,
+      ChevronDownIcon
     },
   };
 </script>
