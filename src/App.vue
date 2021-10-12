@@ -14,7 +14,7 @@
             <span>More</span>
             <ChevronDownIcon class="h-5 w-5 ml-2" />
           </MenuButton>
-          <MenuItems>
+          <MenuItems class="absolute bg-white shadow-md rounded-lg flex flex-col focus:outline-none w-56 divide-y divide-gray-100 origin-top-left mt-2">
             <MenuItem v-slot="{ active }">
               <a :class='{ "bg-blue-500": active }' href="/account-settings">
                 Account settings
