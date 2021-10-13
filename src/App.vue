@@ -19,9 +19,10 @@
               <MenuItem v-slot="{ active }">
                 <button
                   class="w-full flex items-center rounded-md px-2 py-2"
-                  :class='{ "bg-blue-500": active }'
+                  :class='{ "bg-blue-500 text-white": active }'
                 >
-                  <span>Account settings</span>
+                  <PencilIcon class="h-4 w-4" />
+                  <span class="ml-2">Edit</span>
                 </button>
               </MenuItem>
               <MenuItem v-slot="{ active }">
@@ -48,6 +49,7 @@
 <script>
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ChevronDownIcon } from '@heroicons/vue/solid'
+import { PencilIcon } from '@heroicons/vue/outline'
 
   export default {
     components: {
@@ -55,7 +57,8 @@ import { ChevronDownIcon } from '@heroicons/vue/solid'
       MenuButton,
       MenuItems,
       MenuItem,
-      ChevronDownIcon
+      ChevronDownIcon,
+      PencilIcon
     },
   };
 </script>
