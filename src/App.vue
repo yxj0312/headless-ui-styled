@@ -9,17 +9,7 @@
       <h2 class="font-blod text-xl pt-2">Menu (DropDown)</h2>
       <div class="mt-4">
         <Menu>
-          <MenuButton
-            class="
-              flex
-              items-center
-              bg-blue-500
-              text-white
-              rounded-md
-              px-4
-              py-2
-            "
-          >
+          <MenuButton class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2">
             <span>More</span>
             <ChevronDownIcon class="h-5 w-5 ml-2" />
           </MenuButton>
@@ -32,18 +22,7 @@
             leave-to-class="transform scale-75 opacity-0"
           >
             <MenuItems
-              class="
-                absolute
-                bg-white
-                shadow-md
-                rounded-lg
-                flex flex-col
-                focus:outline-none
-                w-56
-                divide-y divide-gray-100
-                origin-top-left
-                mt-2
-              "
+              class="absolute bg-white shadow-md rounded-lg flex flex-col focus:outline-none w-56 divide-y divide-gray-100 origin-top-left mt-2"
             >
               <div class="px-1 py-1">
                 <MenuItem v-slot="{ active }">
@@ -185,8 +164,6 @@
     </div>
   </div>
 </template>
-
-<style></style>
 
 <script>
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
