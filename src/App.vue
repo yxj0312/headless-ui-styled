@@ -23,7 +23,14 @@
             <span>More</span>
             <ChevronDownIcon class="h-5 w-5 ml-2" />
           </MenuButton>
-          <div>
+          <transition
+            enter-active-class="transition duration-200 ease-out"
+            enter-from-class="transform scale-75 opacity-0"
+            enter-to-class="transform scale-100 opacity-100"
+            leave-active-class="transition duration-100 ease-out"
+            leave-from-class="transform scale-100 opacity-100"
+            leave-to-class="transform scale-75 opacity-0"
+          >
             <MenuItems
               class="
                 absolute
@@ -172,7 +179,7 @@
                 </MenuItem>
               </div>
             </MenuItems>
-          </div>
+          </transition>
         </Menu>
       </div>
     </div>
