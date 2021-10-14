@@ -6,7 +6,7 @@
 <template>
   <div class="min-h-screen bg-gray-200 text-gray-900">
     <div class="container mx-auto px-4">
-      <h2 class="font-blod text-xl pt-2">Menu (DropDown)</h2>
+      <h2 class="font-bold text-xl pt-2">Menu (DropDown)</h2>
       <div class="mt-4">
         <Menu>
           <MenuButton class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2">
@@ -161,17 +161,75 @@
           </transition>
         </Menu>
 
-        <div class="mt-4">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, aliquid. Cumque atque quidem similique ducimus nulla sit dolore soluta. Doloribus vitae et maiores aliquid dignissimos velit odit aut ab assumenda!
-        </div>
+        <div
+          class="mt-4"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, aliquid. Cumque atque quidem similique ducimus nulla sit dolore soluta. Doloribus vitae et maiores aliquid dignissimos velit odit aut ab assumenda!</div>
 
         <div class="mt-4">
           <h2 class="font-bold text-xl pt-2">Dialog (Modal)</h2>
           <div class="mt-4">
-            <MenuButton class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2">
-              <span>More</span>
+            <button
+              class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2"
+              @click="openModal"
+            >
+              <span>Open Modal</span>
               <ChevronDownIcon class="h-5 w-5 ml-2" />
-            </MenuButton>
+            </button>
+
+            <TransitionRoot appear :show="isOpen" as="template">
+              <Dialog as="div" @close="closeModal">
+                <div class="fixed inset-0 z-10 overflow-y-auto">
+                  <div class="min-h-screen px-4 text-center">
+                    <TransitionChild
+                      as="template"
+                      enter="duration-300 ease-out"
+                      enter-from="opacity-0"
+                      enter-to="opacity-100"
+                      leave="duration-200 ease-in"
+                      leave-from="opacity-100"
+                      leave-to="opacity-0"
+                    >
+                      <DialogOverlay class="fixed inset-0" />
+                    </TransitionChild>
+
+                    <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
+
+                    <TransitionChild
+                      as="template"
+                      enter="duration-300 ease-out"
+                      enter-from="opacity-0 scale-95"
+                      enter-to="opacity-100 scale-100"
+                      leave="duration-200 ease-in"
+                      leave-from="opacity-100 scale-100"
+                      leave-to="opacity-0 scale-95"
+                    >
+                      <div
+                        class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+                      >
+                        <DialogTitle
+                          as="h3"
+                          class="text-lg font-medium leading-6 text-gray-900"
+                        >Payment successful</DialogTitle>
+                        <div class="mt-2">
+                          <p class="text-sm text-gray-500">
+                            Your payment has been successfully submitted. We’ve sent you
+                            an email with all of the details of your order.
+                          </p>
+                        </div>
+
+                        <div class="mt-4">
+                          <button
+                            type="button"
+                            class="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                            @click="closeModal"
+                          >Got it, thanks!</button>
+                        </div>
+                      </div>
+                    </TransitionChild>
+                  </div>
+                </div>
+              </Dialog>
+            </TransitionRoot>
           </div>
         </div>
       </div>
@@ -180,7 +238,10 @@
 </template>
 
 <script>
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import { ref } from 'vue'
+import {
+  Menu, MenuButton, MenuItems, MenuItem, TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle,
+} from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/solid";
 import { PencilIcon } from "@heroicons/vue/outline";
 
@@ -190,8 +251,28 @@ export default {
     MenuButton,
     MenuItems,
     MenuItem,
+    TransitionRoot,
+    TransitionChild,
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
     ChevronDownIcon,
     PencilIcon,
+  },
+
+  setup() {
+    const isOpen = ref(true)
+
+    return {
+      isOpen,
+      closeModal() {
+        isOpen.value = false
+      },
+      openModal() {
+        isOpen.value = true
+        console.log('hello')
+      },
+    }
   },
 };
 </script>
