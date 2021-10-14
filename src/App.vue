@@ -160,6 +160,20 @@
             </MenuItems>
           </transition>
         </Menu>
+
+        <div class="mt-4">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, aliquid. Cumque atque quidem similique ducimus nulla sit dolore soluta. Doloribus vitae et maiores aliquid dignissimos velit odit aut ab assumenda!
+        </div>
+
+        <div class="mt-4">
+          <h2 class="font-bold text-xl pt-2">Dialog (Modal)</h2>
+          <div class="mt-4">
+            <MenuButton class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2">
+              <span>More</span>
+              <ChevronDownIcon class="h-5 w-5 ml-2" />
+            </MenuButton>
+          </div>
+        </div>
       </div>
     </div>
   </div>
