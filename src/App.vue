@@ -218,7 +218,6 @@ export default {
       },
       openModal() {
         isOpen.value = true
-        console.log('hello')
       },
     }
   },
