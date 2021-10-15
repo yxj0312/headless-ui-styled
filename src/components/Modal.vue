@@ -20,7 +20,9 @@
                         leave-from="opacity-100"
                         leave-to="opacity-0"
                     >
-                        <DialogOverlay class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                        <DialogOverlay
+                            class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                        />
                     </TransitionChild>
 
                     <span class="inline-block h-screen align-middle" aria-hidden="true">&#8203;</span>
@@ -37,6 +39,22 @@
                         <div
                             class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
                         >
+                            <button @click="closeModal" class="absolute top-3 right-3">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </button>
                             <DialogTitle
                                 as="h3"
                                 class="text-lg font-medium leading-6 text-gray-900"
