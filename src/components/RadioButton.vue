@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full px-4 py-16">
-    <div class="w-full max-w-md mx-auto">
+  <div class="w-full">
+    <div class="w-full max-w-md">
       <RadioGroup v-model="selected">
         <RadioGroupLabel class="sr-only">Server size</RadioGroupLabel>
         <div class="space-y-2">

@@ -169,14 +169,14 @@ import Modal from './components/Modal.vue';
         <div class="mt-4">
           <h2 class="font-bold text-xl pt-2">Dialog (Modal)</h2>
           <div class="mt-4">
-            <testModal/>
-            <!-- <button
-              class="flex items-center bg-blue-500 text-white rounded-md px-4 py-2"
-              @click="openModal"
-            >
-              <span>Open Modal</span>
-              <ChevronDownIcon class="h-5 w-5 ml-2" />
-            </button> -->
+            <testModal />
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <h2 class="font-bold text-xl pt-2">Radio Group</h2>
+          <div class="mt-4">
+            <radioGroup />
           </div>
         </div>
       </div>
@@ -191,7 +191,8 @@ import {
 } from "@headlessui/vue";
 import { ChevronDownIcon } from "@heroicons/vue/solid";
 import { PencilIcon } from "@heroicons/vue/outline";
-import testModal from './components/Modal.vue'
+import testModal from './components/Modal.vue';
+import radioGroup from './components/RadioButton.vue'
 export default {
   components: {
     Menu,
