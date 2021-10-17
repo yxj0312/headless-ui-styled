@@ -214,9 +214,10 @@ export default {
   setup() {
     const selected = ref(plans[0])
 
-   const gameSelection= 'new game',
+   const gameSelection= ref('new game')
+   const plan= ref('startup')
 
-    return { selected, plans, gameSelection }
+    return { selected, plans, gameSelection, plan }
   },
 }
 </script>
