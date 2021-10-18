@@ -179,6 +179,13 @@ import Modal from './components/Modal.vue';
             <radioGroup />
           </div>
         </div>
+
+        <div class="mt-4">
+          <h2 class="font-bold text-xl pt-2">Tabs</h2>
+          <div class="mt-4">
+            <tabs />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -193,6 +200,7 @@ import { ChevronDownIcon } from "@heroicons/vue/solid";
 import { PencilIcon } from "@heroicons/vue/outline";
 import testModal from './components/Modal.vue';
 import radioGroup from './components/RadioButton.vue'
+import tabs from './components/Tabs.vue'
 export default {
   components: {
     Menu,
